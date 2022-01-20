@@ -28,6 +28,7 @@ class rke (
   $base_url     = "https://github.com/rancher/rke/releases/download/v${version}"
   $archive_file = "rke_${uname}-${arch}"
   $source       = "${base_url}/${archive_file}"
+  $dest_path    = "${version_path}/${archive_file}"
 
   file { [$base_path, $dl_path, $version_path]:
     ensure => directory,
@@ -42,12 +43,20 @@ class rke (
     checksum_type => $checksum_type,
     cleanup       => false,
     extract       => false,
-    path          => "${version_path}/${archive_file}",
+    path          => $dest_path,
     source        => $source,
     require       => File[$version_path],
   }
-  -> file { "${bin_path}/rke":
-    ensure => link,
-    target => "${dl_path}/rke",
+  -> file { $dest_path:
+    ensure => file,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+  }
+
+  file { "${bin_path}/rke":
+    ensure  => link,
+    target  => "${version_path}/${archive_file}",
+    require => Archive[$archive_file],
   }
 }

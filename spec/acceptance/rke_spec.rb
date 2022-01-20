@@ -24,6 +24,20 @@ describe 'rke class' do
         it { is_expected.to be_mode '755' }
       end
     end
+
+    describe file('/opt/rke/dl/1.3.4/rke_linux-amd64') do
+      it { is_expected.to be_file }
+      it { is_expected.to be_owned_by 'root' }
+      it { is_expected.to be_grouped_into 'root' }
+      it { is_expected.to be_mode '755' }
+    end
+
+    describe file('/usr/bin/rke') do
+      it { is_expected.to be_symlink }
+      it { is_expected.to be_owned_by 'root' }
+      it { is_expected.to be_grouped_into 'root' }
+      it { is_expected.to be_linked_to '/opt/rke/dl/1.3.4/rke_linux-amd64' }
+    end
   end
 
   context 'with base_path param' do
@@ -50,6 +64,20 @@ describe 'rke class' do
         it { is_expected.to be_grouped_into 'root' }
         it { is_expected.to be_mode '755' }
       end
+    end
+
+    describe file("#{basedir}/dl/1.3.4/rke_linux-amd64") do
+      it { is_expected.to be_file }
+      it { is_expected.to be_owned_by 'root' }
+      it { is_expected.to be_grouped_into 'root' }
+      it { is_expected.to be_mode '755' }
+    end
+
+    describe file('/usr/bin/rke') do
+      it { is_expected.to be_symlink }
+      it { is_expected.to be_owned_by 'root' }
+      it { is_expected.to be_grouped_into 'root' }
+      it { is_expected.to be_linked_to "#{basedir}/dl/1.3.4/rke_linux-amd64" }
     end
   end
 end
