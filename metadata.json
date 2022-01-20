@@ -2,11 +2,14 @@
   "name": "lsst-rke",
   "version": "0.1.0",
   "author": "AURA/LSST/Rubin Observatory",
-  "summary": "",
+  "summary": "RKE module",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/lsst-it/puppet-rke.git",
   "dependencies": [
-
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 5.0.0 < 9.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
