@@ -5,9 +5,9 @@ require 'spec_helper_acceptance'
 describe 'rke class' do
   context 'without any parameters', :cleanup_opt do
     let(:pp) do
-      <<-EOS
+      <<-PP
       include rke
-      EOS
+      PP
     end
 
     it_behaves_like 'an idempotent resource'
@@ -44,11 +44,11 @@ describe 'rke class' do
     basedir = default.tmpdir('rke')
 
     let(:pp) do
-      <<-EOS
+      <<-PP
       class { rke:
         base_path => '#{basedir}',
       }
-      EOS
+      PP
     end
 
     it_behaves_like 'an idempotent resource'
@@ -83,12 +83,12 @@ describe 'rke class' do
 
   context 'with version related params' do
     let(:pp) do
-      <<-EOS
+      <<-PP
       class { rke:
         version  => '1.3.3',
         checksum => '61088847d80292f305e233b7dff4ac8e47fefdd726e5245052450bf05da844aa',
       }
-      EOS
+      PP
     end
 
     it_behaves_like 'an idempotent resource'
