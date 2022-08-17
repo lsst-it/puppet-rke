@@ -4,7 +4,7 @@ require 'spec_helper_acceptance'
 
 describe 'rke class' do
   context 'without any parameters', :cleanup_opt do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       include rke
       PP
@@ -43,7 +43,7 @@ describe 'rke class' do
   context 'with base_path param' do
     basedir = default.tmpdir('rke')
 
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       class { rke:
         base_path => '#{basedir}',
@@ -82,7 +82,7 @@ describe 'rke class' do
   end
 
   context 'with version related params' do
-    let(:pp) do
+    let(:manifest) do
       <<-PP
       class { rke:
         version  => '1.3.3',
