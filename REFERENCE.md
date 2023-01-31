@@ -18,12 +18,12 @@ Install RKE binary
 
 The following parameters are available in the `rke` class:
 
-* [`version`](#version)
-* [`checksum`](#checksum)
-* [`checksum_type`](#checksum_type)
-* [`base_path`](#base_path)
+* [`version`](#-rke--version)
+* [`checksum`](#-rke--checksum)
+* [`checksum_type`](#-rke--checksum_type)
+* [`base_path`](#-rke--base_path)
 
-##### <a name="version"></a>`version`
+##### <a name="-rke--version"></a>`version`
 
 Data type: `String`
 
@@ -31,7 +31,7 @@ RKE release version
 
 Default value: `'1.3.4'`
 
-##### <a name="checksum"></a>`checksum`
+##### <a name="-rke--checksum"></a>`checksum`
 
 Data type: `String`
 
@@ -39,7 +39,7 @@ Artifact checksum string
 
 Default value: `'92440ec62468d329ca26829b2a1d5624aa7a5d37054596633e4e838549a22946'`
 
-##### <a name="checksum_type"></a>`checksum_type`
+##### <a name="-rke--checksum_type"></a>`checksum_type`
 
 Data type: `String`
 
@@ -47,7 +47,7 @@ The digest algorithm used for the checksum string.
 
 Default value: `'sha256'`
 
-##### <a name="base_path"></a>`base_path`
+##### <a name="-rke--base_path"></a>`base_path`
 
 Data type: `Stdlib::Absolutepath`
 
