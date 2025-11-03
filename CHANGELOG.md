@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v2.2.0](https://github.com/lsst-it/puppet-rke/tree/v2.2.0) (2025-11-03)
+
+[Full Changelog](https://github.com/lsst-it/puppet-rke/compare/v2.1.0...v2.2.0)
+
+**Breaking changes:**
+
+- modulesync 9.3.0 [\#27](https://github.com/lsst-it/puppet-rke/pull/27) ([jhoblitt](https://github.com/jhoblitt))
+
+**Implemented enhancements:**
+
+- \(metadata.json\) Bump archive to include v9 [\#41](https://github.com/lsst-it/puppet-rke/pull/41) ([badenerb](https://github.com/badenerb))
+- Update dependency voxpupuli-test to v13 [\#39](https://github.com/lsst-it/puppet-rke/pull/39) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/labeler action to v6 [\#36](https://github.com/lsst-it/puppet-rke/pull/36) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v5 [\#34](https://github.com/lsst-it/puppet-rke/pull/34) ([renovate[bot]](https://github.com/apps/renovate))
+- \(puppet-rke\) add license file [\#22](https://github.com/lsst-it/puppet-rke/pull/22) ([dtapiacl](https://github.com/dtapiacl))
+
 ## [v2.1.0](https://github.com/lsst-it/puppet-rke/tree/v2.1.0) (2023-08-22)
 
 [Full Changelog](https://github.com/lsst-it/puppet-rke/compare/v2.0.0...v2.1.0)
